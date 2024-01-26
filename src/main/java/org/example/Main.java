@@ -15,7 +15,6 @@ public class Main {
     private static void doFeedersWork() {
         System.out.println(zooCage.askForFeeder().feed());
         System.out.println(zooCage.askForFeeder().clean());
-
     }
 
     private static void checkCage(final TypeOfEnimal typeOfAnimal) {
