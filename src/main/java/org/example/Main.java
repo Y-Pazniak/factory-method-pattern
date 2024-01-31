@@ -1,30 +1,25 @@
 package org.example;
 
-import org.example.cage.GiraffesCage;
-import org.example.cage.WolfsCage;
-import org.example.cage.ZooCage;
+import org.example.spaces.CreaturesFactory;
+import org.example.spaces.PetShopFactory;
+import org.example.spaces.ZooFactory;
 
 public class Main {
-    private static ZooCage zooCage;
+    private static final boolean needAnimalsForPetShop = false;
 
     public static void main(String[] args) {
-        checkCage(TypeOfEnimal.PREDATOR);
-        doFeedersWork();
+        Application application = configureApplication();
+        application.checkCreaturesNames();
+        application.areCreaturesSafe();
     }
 
-    private static void doFeedersWork() {
-        System.out.println(zooCage.askForFeeder().feed());
-        System.out.println(zooCage.askForFeeder().clean());
+    private static Application configureApplication() {
+        CreaturesFactory creaturesFactory;
 
-    }
+        if (needAnimalsForPetShop) {
+            creaturesFactory = new PetShopFactory();
+        } else creaturesFactory = new ZooFactory();
 
-    private static void checkCage(final TypeOfEnimal typeOfAnimal) {
-        if (typeOfAnimal == TypeOfEnimal.GRASSFEEDING) {
-            zooCage = new GiraffesCage();
-        } else {
-            if (typeOfAnimal == TypeOfEnimal.PREDATOR) {
-                zooCage = new WolfsCage();
-            }
-        }
+        return new Application(creaturesFactory);
     }
 }
