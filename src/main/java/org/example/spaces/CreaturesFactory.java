@@ -1,13 +1,13 @@
 package org.example.spaces;
 
-import org.example.animals.Animals;
-import org.example.birds.Birds;
-import org.example.reptiles.Reptiles;
+import org.example.animals.Animal;
+import org.example.birds.Bird;
+import org.example.reptiles.Reptile;
 
 public interface CreaturesFactory {
-    Animals animal();
+    Animal animal();
 
-    Birds bird();
+    Bird bird();
 
-    Reptiles reptile();
+    Reptile reptile();
 }

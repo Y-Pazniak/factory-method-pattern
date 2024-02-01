@@ -1,7 +1,9 @@
 package org.example.reptiles;
 
-public interface Reptiles {
+public interface Reptile {
     String name();
+
     boolean isDangerous();
+
     int size();
 }

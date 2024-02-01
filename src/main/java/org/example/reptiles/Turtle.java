@@ -1,6 +1,6 @@
 package org.example.reptiles;
 
-public class Turtle implements Reptiles{
+public class Turtle implements Reptile {
     @Override
     public String name() {
         return "Turtle";

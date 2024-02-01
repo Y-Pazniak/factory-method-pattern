@@ -1,25 +1,25 @@
 package org.example.spaces;
 
-import org.example.animals.Animals;
+import org.example.animals.Animal;
 import org.example.animals.DomesticCat;
-import org.example.birds.Birds;
+import org.example.birds.Bird;
 import org.example.birds.Carrot;
-import org.example.reptiles.Reptiles;
+import org.example.reptiles.Reptile;
 import org.example.reptiles.Turtle;
 
 public class PetShopFactory implements CreaturesFactory {
     @Override
-    public Animals animal() {
+    public Animal animal() {
         return new DomesticCat();
     }
 
     @Override
-    public Birds bird() {
+    public Bird bird() {
         return new Carrot();
     }
 
     @Override
-    public Reptiles reptile() {
+    public Reptile reptile() {
         return new Turtle();
     }
 }

@@ -1,14 +1,14 @@
 package org.example;
 
-import org.example.animals.Animals;
-import org.example.birds.Birds;
-import org.example.reptiles.Reptiles;
+import org.example.animals.Animal;
+import org.example.birds.Bird;
+import org.example.reptiles.Reptile;
 import org.example.spaces.CreaturesFactory;
 
 public class Application {
-    private final Animals animal;
-    private final Birds bird;
-    private final Reptiles reptile;
+    private final Animal animal;
+    private final Bird bird;
+    private final Reptile reptile;
 
     public Application(CreaturesFactory creaturesFactory) {
         animal = creaturesFactory.animal();

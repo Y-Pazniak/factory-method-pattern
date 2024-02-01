@@ -1,6 +1,6 @@
 package org.example.animals;
 
-public interface Animals {
+public interface Animal {
     String name();
     boolean isDangerous();
 

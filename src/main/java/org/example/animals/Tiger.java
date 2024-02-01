@@ -1,6 +1,6 @@
 package org.example.animals;
 
-public class Tiger implements Animals{
+public class Tiger implements Animal {
     @Override
     public String name() {
         return "Tiger";
