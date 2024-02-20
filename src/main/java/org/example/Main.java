@@ -1,30 +1,24 @@
 package org.example;
 
-import org.example.cage.GiraffesCage;
-import org.example.cage.WolfsCage;
-import org.example.cage.ZooCage;
+import org.example.animal.AnimalEntity;
+import org.example.animal.AnimalPassport;
+import org.example.builder.AnimalBuilder;
+import org.example.builder.PassportBuilder;
 
 public class Main {
-    private static ZooCage zooCage;
-
     public static void main(String[] args) {
-        checkCage(TypeOfEnimal.PREDATOR);
-        doFeedersWork();
-    }
+        Director director = new Director();
+        AnimalBuilder animalBuilder = new AnimalBuilder();
+        director.constructCat(animalBuilder);
 
-    private static void doFeedersWork() {
-        System.out.println(zooCage.askForFeeder().feed());
-        System.out.println(zooCage.askForFeeder().clean());
+        AnimalEntity cat = animalBuilder.getResult();
 
-    }
+        System.out.println(cat.getAnimalType());
+        System.out.println(cat.getFur().getColor());
 
-    private static void checkCage(final TypeOfEnimal typeOfAnimal) {
-        if (typeOfAnimal == TypeOfEnimal.GRASSFEEDING) {
-            zooCage = new GiraffesCage();
-        } else {
-            if (typeOfAnimal == TypeOfEnimal.PREDATOR) {
-                zooCage = new WolfsCage();
-            }
-        }
+        PassportBuilder passportBuilder = new PassportBuilder();
+        director.constructCat(passportBuilder);
+        AnimalPassport animalPassport = passportBuilder.getResult();
+        System.out.println(animalPassport.info());
     }
 }
