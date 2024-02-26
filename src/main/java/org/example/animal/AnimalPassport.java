@@ -5,6 +5,8 @@ import org.example.components.Fur;
 import org.example.components.Size;
 import org.example.components.Tail;
 
+import java.util.Objects;
+
 public class AnimalPassport {
     private final AnimalType animalType;
     private final Body body;
@@ -28,7 +30,7 @@ public class AnimalPassport {
         stringBuilder.append("Is dangerous: ").append(body.isDangerous()).append("\n");
         stringBuilder.append("Weight: ").append(body.getWeight()).append("\n");
 
-        if (fur.isExists()) {
+        if (!fur.getColor().isEmpty()) {
             stringBuilder.append("Fur color: ").append(fur.getColor()).append("\n");
         } else {
             stringBuilder.append("Bald").append("\n");
@@ -36,7 +38,7 @@ public class AnimalPassport {
 
         stringBuilder.append("Size: ").append(size).append("\n");
 
-        if (tail.isExists()) {
+        if (!Objects.isNull(tail) && tail.getLength() > 0) {
             stringBuilder.append("Tail's length: ").append(tail.getLength()).append("\n");
         } else {
             stringBuilder.append("No tail").append("\n");

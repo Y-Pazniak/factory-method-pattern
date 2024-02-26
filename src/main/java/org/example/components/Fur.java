@@ -1,19 +1,19 @@
 package org.example.components;
 
+import java.util.Objects;
+
 public class Fur {
     private String color;
-    private boolean exists;
 
-    public Fur(String color, boolean exists) {
+    public Fur(String color) {
         this.color = color;
-        this.exists = exists;
     }
 
     public void cleanFur() {
-        if (exists) {
-            System.out.println("You clean fur: " + color);
+        if (color.isEmpty()) {
+            System.out.println("Animal is bald");
         } else {
-            System.out.println("This animal is bald :(");
+            System.out.println("You clean fur: " + color);
         }
     }
 
@@ -23,13 +23,5 @@ public class Fur {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public boolean isExists() {
-        return exists;
-    }
-
-    public void setExists(boolean exists) {
-        this.exists = exists;
     }
 }

@@ -2,15 +2,13 @@ package org.example.components;
 
 public class Tail {
     private double length;
-    private final boolean exists;
 
-    public Tail(double length, boolean exists) {
-        this.exists = exists;
+    public Tail(double length) {
         this.length = length;
     }
 
-    public void touchTail(){
-        if (exists) {
+    public void touchTail() {
+        if (length > 0) {
             System.out.println("You touch tail: " + length);
         } else {
             System.out.println("There is no tail :(");
@@ -23,9 +21,5 @@ public class Tail {
 
     public void setLength(double length) {
         this.length = length;
-    }
-
-    public boolean isExists() {
-        return exists;
     }
 }
