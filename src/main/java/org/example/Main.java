@@ -1,30 +1,21 @@
 package org.example;
 
-import org.example.cage.GiraffesCage;
-import org.example.cage.WolfsCage;
-import org.example.cage.ZooCage;
+import org.example.cats.Cat;
+import org.example.cats.OrdinaryCat;
+import org.example.cats.PurebredCat;
 
 public class Main {
-    private static ZooCage zooCage;
-
     public static void main(String[] args) {
-        checkCage(TypeOfEnimal.PREDATOR);
-        doFeedersWork();
-    }
+        Cat scrappyCat = new OrdinaryCat("Scrappy");
+        Cat sirJasperCat = new PurebredCat("Sir Jasper The Third");
 
-    private static void doFeedersWork() {
-        System.out.println(zooCage.askForFeeder().feed());
-        System.out.println(zooCage.askForFeeder().clean());
+        Cat noodleCat = scrappyCat.clone();
+        Cat marblesCat = sirJasperCat.clone();
 
-    }
+        noodleCat.setName("Noodle");
+        marblesCat.setName("Her Majesty Marbles");
 
-    private static void checkCage(final TypeOfEnimal typeOfAnimal) {
-        if (typeOfAnimal == TypeOfEnimal.GRASSFEEDING) {
-            zooCage = new GiraffesCage();
-        } else {
-            if (typeOfAnimal == TypeOfEnimal.PREDATOR) {
-                zooCage = new WolfsCage();
-            }
-        }
+        System.out.println(noodleCat.getName());
+        System.out.println(marblesCat.getName());
     }
 }
